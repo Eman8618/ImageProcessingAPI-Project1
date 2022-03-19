@@ -30,6 +30,7 @@ app.get("/Thumbnail/imagename/:imagename/width/:width/height/:height", function 
                 if (Notexist) {
                     console.log('Image is being resized');
                     (0, ResImF_1.default)("OrSImage/".concat(req.params.imagename), Number(req.params.width), Number(req.params.height), "Thumbnail/".concat(req.params.width, "-").concat(req.params.height, "-").concat(req.params.imagename));
+                    res.send('Image is being resized please reload this url to access the resized image');
                     return;
                 }
                 {
