@@ -10,8 +10,8 @@ All of that happened after check if the image is available on the OrSImage folde
 Also , If the image is resized before then it will be shown directly without repeating the resizing
 otherwise messages will be appeared that missing input on console
 ## Start & build & test Scripts  using certain commands
-npm run start-server
-npm run build-server
+npm run start-server - 
+npm run build-server -
 npm run test-server 
 # The availabe images on the OrSImage
 encenadaportjpg - fjord.jpg - icelandwaterfall.jpg-
