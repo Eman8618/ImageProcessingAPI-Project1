@@ -1,5 +1,5 @@
 # ImageProcessingAPI
- This project is created according to contents and videos that's explained on Advanced Full Stack web development
+ This project is created according to contents and videos that were explained on Advanced Full Stack web development
 # The aim of this project
 created the api which use tools called image processing API  which resizes from OrSImage folder and save resized image on Thumbnail folder to user with specificaion when visiting the URL
 # This project is created according the structures that given on te track
