@@ -13,12 +13,12 @@ otherwise messages will be appeared that missing input on console
 npm run start-server - 
 npm run build-server -
 npm run test-server 
-# The availabe images on the OrSImage
+## The availabe images on the OrSImage
 encenadaportjpg - fjord.jpg - icelandwaterfall.jpg-
 palmtunnel.jpg - santamonica.jpg
-## To access the origial image
+## To access the origial image on OrSImage here is an example:
 http://localhost:3000/OrSImage/fjord.jpg
-## To access the resized image
+## To access the resized image on the thumbnail here is an example:
 http://localhost:3000/Thumbnail/imagename/palmtunnel.jpg/width/111/height/400
 ## Using supertest and jasmine for test the code
 there are 3 tests on that project
