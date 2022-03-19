@@ -5,8 +5,8 @@ created the api which use tools called image processing API  which resizes from 
 # This project is created according the structures that given on te track
 # The main function here are:
 resizing image using sharp  after determine the width & height & image name with url 
-then show the image on the browser after reloading the specification again
-that happened after check if the image is available on the OrSImage folder 
+then show the image on the browser after reloading the specification again.
+All of that happened after check if the image is available on the OrSImage folder 
 Also , If the image is resized before then it will be shown directly without repeating the resizing
 otherwise messages will be appeared that missing input on console
 ## Start & build & test Scripts  using certain commands
