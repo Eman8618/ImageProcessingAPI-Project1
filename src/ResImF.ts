@@ -19,8 +19,8 @@ async function ImResF(OrImPth: string//Original Image with it's Path
       .toFile(ReImPth);
   
   } catch (err) {
-    console.log('Image Cannot be resized');
-    return 'Image cannot be resized'
+    console.log('Image cannot be resized you need to check Image existance on the original folder & the values of width and height');
+    return 'Image cannot be resized you need to check Image existance on the original folder & the values of width and height '
   }
 }
 export default ImResF;

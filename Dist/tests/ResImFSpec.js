@@ -44,26 +44,105 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var sharp = require("sharp");
 // Importing app from ResImF.ts file
 var ResImF_1 = __importDefault(require("../ResImF"));
+var fs = require("fs");
+//Test 1 for the resizing function when image exists on original folder but not be resized
+//with that acceptable with and height
 // Describe the test
-describe('Testing Of Resizing an Image', function () {
+describe('Test #1::Testing Of Resizing an Image', function () {
     it('Getting Resizing Image', function () { return __awaiter(void 0, void 0, void 0, function () {
-        var width, height, err_1;
+        var width_1, height_1, imagename_1, err_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 2, , 3]);
-                    width = 111;
-                    height = 400;
-                    return [4 /*yield*/, (0, ResImF_1.default)("OrSImage/palmtunnel.jpg", width, height, "Thumbnail/".concat(width, "-").concat(height, "-palmtunnel.jpg"))];
+                    width_1 = 111;
+                    height_1 = 400;
+                    imagename_1 = 'palmtunnel.jpg';
+                    // Check if resized image is existed before 
+                    return [4 /*yield*/, fs.access("Thumbnail/".concat(width_1, "-").concat(height_1, "-").concat(imagename_1), function (Notexist) {
+                            //If image not resized  Then apply resizing function " ImResF "
+                            (0, ResImF_1.default)("OrSImage/".concat(imagename_1), width_1, height_1, "Thumbnail/".concat(width_1, "-").concat(height_1, "-palmtunnel.jpg"));
+                            expect('Image Resized Successfully');
+                        })];
                 case 1:
+                    // Check if resized image is existed before 
                     _a.sent();
-                    expect('Image Resized Successfully');
                     return [3 /*break*/, 3];
                 case 2:
                     err_1 = _a.sent();
-                    console.log('Image Cannot be resized');
-                    return [2 /*return*/, 'Image cannot be resized'];
+                    console.log('Image cannot be resized you need to check Image existance on the original folder & the values of width and height ');
+                    return [2 /*return*/, 'Image cannot be resized you need to check Image existance on the original folder & the values of width and height '];
                 case 3: return [2 /*return*/];
+            }
+        });
+    }); });
+});
+//Test 2 for the resizing function when image maybe not exists on original folder 
+// Describe the test
+describe('Test #2 :: Testing Of Resizing an Image', function () {
+    it('Getting Resizing Image', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var width_2, height_2, imagename_2, err_2;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 2, , 3]);
+                    width_2 = 121;
+                    height_2 = 33;
+                    imagename_2 = 'palmtnnel.jpg';
+                    // Check if resized image is existed before 
+                    return [4 /*yield*/, fs.access("Thumbnail/".concat(width_2, "-").concat(height_2, "-").concat(imagename_2), function (Notexist) {
+                            //If image not resized  Then apply resizing function " ImResF "
+                            //if (Notexist) {
+                            (0, ResImF_1.default)("OrSImage/".concat(imagename_2), width_2, height_2, "Thumbnail/".concat(width_2, "-").concat(height_2, "-palmtunnel.jpg"));
+                            expect('Image Resized Successfully');
+                        })];
+                case 1:
+                    // Check if resized image is existed before 
+                    _a.sent();
+                    return [3 /*break*/, 3];
+                case 2:
+                    err_2 = _a.sent();
+                    console.log('Image cannot be resized you need to check Image existance on the original folder & the values of width and height ');
+                    return [2 /*return*/, 'Image cannot be resized you need to check Image existance on the original folder & the values of width and height '];
+                case 3: return [2 /*return*/];
+            }
+        });
+    }); });
+});
+//Test 3 for the resizing function when  the values of width & height are Invalid
+// Describe the test
+describe('Test #3 :: Testing Of Resizing an Image', function () {
+    it('Getting Resizing Image', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var width_3, height_3, imagename_3, err_3;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 4, , 5]);
+                    width_3 = 121;
+                    height_3 = -33;
+                    imagename_3 = 'palmtunnel.jpg';
+                    if (!((width_3) < 0 || height_3 < 0)) return [3 /*break*/, 1];
+                    console.log('===================================');
+                    console.log('Invalid values for width and height');
+                    return [3 /*break*/, 3];
+                case 1: 
+                // Check if resized image is existed before 
+                return [4 /*yield*/, fs.access("Thumbnail/".concat(width_3, "-").concat(height_3, "-").concat(imagename_3), function (Notexist) {
+                        //If image not resized  Then apply resizing function " ImResF "
+                        //if (Notexist) {
+                        (0, ResImF_1.default)("OrSImage/".concat(imagename_3), width_3, height_3, "Thumbnail/".concat(width_3, "-").concat(height_3, "-palmtunnel.jpg"));
+                        expect('Image Resized Successfully');
+                    })];
+                case 2:
+                    // Check if resized image is existed before 
+                    _a.sent();
+                    _a.label = 3;
+                case 3: return [3 /*break*/, 5];
+                case 4:
+                    err_3 = _a.sent();
+                    console.log('Image cannot be resized you need to check Image existance on the original folder & the values of width and height ');
+                    return [2 /*return*/, 'Image cannot be resized you need to check Image existance on the original folder & the values of width and height '];
+                case 5: return [2 /*return*/];
             }
         });
     }); });

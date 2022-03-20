@@ -7,8 +7,8 @@
     "test-server": "npm run build-server && jasmine",
     "start-server": "nodemon src/index.ts",
     "build-server": "npx tsc ",
-    "lint-f": "eslint --ext .js,.ts",
-    "prettier":"prettier --write" 
+    "lint-f": "eslint --ext .ts",
+    "prettier": "prettier --ext .ts --write"
   },
   "author": "EmanMohammed",
   "license": "ISC",
