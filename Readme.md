@@ -1,27 +1,32 @@
 # ImageProcessingAPI
- This project is created according to contents and videos that were explained on Advanced Full Stack web development from UDACITY
+ This project is created according to contents and videos that are explained on Advanced Full Stack web development
 # The aim of this project
-created the api which use tools for image processing API  which resizes from OrSImage folder and saves resized image on Thumbnail folder to user with specificaion when visiting the URL
-# This project is created according the structures that given on the track
+created the api which use tools for image processing API  which resizes from OrSImage folder and save resized image on Thumbnail folder to user with specificaion when visiting the URL
+# This project is created according the structures that given on te track
 # The main function here are:
 resizing image using sharp  after determine the width & height & image name with url 
-then show the image on the browser after reloading the specification again.
-All of that happened after check if the image is available on the OrSImage folder 
+then show the image on the browser after reloading the specification again
+that happened after check if the image is available on the OrSImage folder 
 Also , If the image is resized before then it will be shown directly without repeating the resizing
 otherwise messages will be appeared that missing input on console
-## Start & build & test Scripts  using certain commands
-npm run start-server - 
-npm run build-server -
+Also check the values for width and height  to be sure that's valid if not it will be shown message 
+that their values are Invalid and if the image is not existed on the original file then 
+will be shown message that Image does not exist 
+# Start & build & test Scripts  using certain commands
+npm run start-server //
+npm run build-server//
 npm run test-server 
 ## The availabe images on the OrSImage
 encenadaportjpg - fjord.jpg - icelandwaterfall.jpg-
 palmtunnel.jpg - santamonica.jpg
-## To access the origial image on OrSImage here is an example:
+## To access the origial image
 http://localhost:3000/OrSImage/fjord.jpg
-## To access the resized image on the thumbnail here is an example:
+## To access the resized image
 http://localhost:3000/Thumbnail/imagename/palmtunnel.jpg/width/111/height/400
+
+##
 ## Using supertest and jasmine for test the code
-there are 3 tests on that project
+there are 5 tests on that project
 
 
 ## Packages that are needed to be installed
@@ -41,4 +46,6 @@ npm install -g ts-node
 npm i  multer 
 npm install --save sharp npm install --save-dev @types/sharp
 npm i supertest
+
+
 
