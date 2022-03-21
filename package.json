@@ -8,7 +8,7 @@
     "start-server": "nodemon src/index.ts",
     "build-server": "npx tsc ",
     "lint-f": "eslint --ext .ts",
-    "prettier": "prettier --ext .ts --write"
+    "prettier": "prettier --write"
   },
   "author": "EmanMohammed",
   "license": "ISC",
