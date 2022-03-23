@@ -1,7 +1,7 @@
 import express from 'express';
 import { Request } from 'express';
 import { Response } from 'express';
-import routes from './routes/routes';
+import routes1 from './routes/routes1';
 
 
 const app = express();
@@ -10,14 +10,13 @@ const port='3000';
 //To Access the images with their origial size
 app.use('/OrSImage',express.static('OrSImage'));
 app.get('/',(req:Request,res:Response)=>{
-  //Print url on console
-  console.log(req.url);
+  
   res.send(`Server is started working on port ${port}`)
     
 });
 
 // Resizing Image from the middleware route.ts
-app.use('/', routes);
+app.use('/', routes1);
 
 // Server is starting on port 3000
 app.listen(port,()=>{console.log((`Server is listening on port number ${port}: http://localhost:${port}`))});
