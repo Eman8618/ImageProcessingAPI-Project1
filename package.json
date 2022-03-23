@@ -8,12 +8,7 @@
     "start-server": "nodemon src/index.ts",
     "build-server": "npx tsc ",
     "lint-f": "eslint --ext .ts",
-<<<<<<< HEAD
-    "prettier": "prettier --config .prettierrc --write './src/**/*.ts'",
-    "pr":"prettier -l "
-=======
-    "prettier": "prettier --write"
->>>>>>> 6918b92c5c8b2ea0cda20213a13fb103b091197b
+    "prettier": "prettier --config .prettierrc --write './src/**/*.ts'"
   },
  
   "author": "EmanMohammed",
