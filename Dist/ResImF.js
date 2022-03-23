@@ -61,10 +61,9 @@ ReImPth // Resized Image and it's Path
                 case 1:
                     //Using sharp to resize the image 
                     _a.sent();
-                    return [3 /*break*/, 3];
+                    return [2 /*return*/, ReImPth];
                 case 2:
                     err_1 = _a.sent();
-                    console.log('Image cannot be resized you need to check Image existance on the original folder & the values of width and height');
                     return [2 /*return*/, 'Image cannot be resized you need to check Image existance on the original folder & the values of width and height '];
                 case 3: return [2 /*return*/];
             }
