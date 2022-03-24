@@ -16,5 +16,7 @@ app.get('/', function (req, res) {
 // Resizing Image from the middleware route.ts
 app.use('/', routes1_1.default);
 // Server is starting on port 3000
-app.listen(port, function () { console.log(("Server is listening on port number ".concat(port, ": http://localhost:").concat(port))); });
+app.listen(port, function () {
+    console.log("Server is listening on port number ".concat(port, ": http://localhost:").concat(port));
+});
 exports.default = app;

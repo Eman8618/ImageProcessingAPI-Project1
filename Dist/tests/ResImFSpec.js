@@ -39,11 +39,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var sharp = require("sharp");
+var sharp = require('sharp');
 // Importing app from ResImF.ts file
 var ResImF_1 = __importDefault(require("../ResImF"));
-// Importing supertest 
-var fs = require("fs");
+// Importing supertest
+var fs = require('fs');
 //Test 6 for the resizing function when image exists on original folder but not be resized
 //with that acceptable width and height
 // Describe the test
@@ -57,16 +57,17 @@ describe('Test #6::Testing Of Resizing an Image with ResImF ', function () {
                     width = 111;
                     height = 400;
                     imagename = 'palmtunnel.jpg';
-                    // Check if resized image is existed before 
+                    // Check if resized image is existed before
                     //If image not resized  Then apply resizing function " ImResF "
                     return [4 /*yield*/, (0, ResImF_1.default)("OrSImage/".concat(imagename), width, height, "Thumbnail/".concat(width, "-").concat(height, "-").concat(imagename))];
                 case 1:
-                    // Check if resized image is existed before 
+                    // Check if resized image is existed before
                     //If image not resized  Then apply resizing function " ImResF "
                     _a.sent();
                     expect(fs.access("Thumbnail/".concat(width, "-").concat(height, "-").concat(imagename), function (Notexist) {
                         if (Notexist) {
-                            'Image Resized Successfully';
+                            ;
+                            ('Image Resized Successfully');
                         }
                     }));
                     return [3 /*break*/, 3];

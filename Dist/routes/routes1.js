@@ -41,7 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
 var Availabilty_1 = __importDefault(require("../Availabilty"));
-var fs = require("fs");
+var fs = require('fs');
 var routes1 = express_1.default.Router();
 routes1.get("/Thumbnail/imagename/:imagename/width/:width/height/:height", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {

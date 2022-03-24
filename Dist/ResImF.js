@@ -36,12 +36,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var sharp = require("sharp");
-var fs = require("fs");
+var sharp = require('sharp');
+var fs = require('fs');
 // Using async function to resize image with new width and new height
-function ImResF(OrImPth //Original Image with it's Path
-, width //New width for the Resized Image
-, height, //New height for the Resized Image 
+function ImResF(OrImPth, //Original Image with it's Path
+width, //New width for the Resized Image
+height, //New height for the Resized Image
 ReImPth // Resized Image and it's Path
 ) {
     return __awaiter(this, void 0, void 0, function () {
@@ -50,16 +50,16 @@ ReImPth // Resized Image and it's Path
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 2, , 3]);
-                    //Using sharp to resize the image 
+                    //Using sharp to resize the image
                     return [4 /*yield*/, sharp(OrImPth)
                             .resize({
                             width: width,
-                            height: height
+                            height: height,
                         })
-                            .toFormat("jpeg", { mozjpeg: true })
+                            .toFormat('jpeg', { mozjpeg: true })
                             .toFile(ReImPth)];
                 case 1:
-                    //Using sharp to resize the image 
+                    //Using sharp to resize the image
                     _a.sent();
                     return [2 /*return*/, ReImPth];
                 case 2:

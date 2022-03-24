@@ -39,12 +39,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var fs = require("fs");
+var fs = require('fs');
 var ResImF_1 = __importDefault(require("./ResImF"));
 // Using async function to resize image with new width and new height
-function Availabity(OrImPth //OriginalPath
-, width //New width for the Resized Image
-, height, //New height for the Resized Image 
+function Availabity(OrImPth, //OriginalPath
+width, //New width for the Resized Image
+height, //New height for the Resized Image
 req, res) {
     return __awaiter(this, void 0, void 0, function () {
         var err_1;
@@ -54,22 +54,26 @@ req, res) {
                 case 0:
                     _a.trys.push([0, 2, , 3]);
                     //Check the availability
-                    return [4 /*yield*/, (fs.access("".concat(OrImPth), function (Imnotexist) { return __awaiter(_this, void 0, void 0, function () {
+                    return [4 /*yield*/, fs.access("".concat(OrImPth), function (Imnotexist) { return __awaiter(_this, void 0, void 0, function () {
                             return __generator(this, function (_a) {
                                 switch (_a.label) {
                                     case 0:
                                         if (!Imnotexist) return [3 /*break*/, 1];
                                         res.send('The Image doesnot be found on the OrImage folder check name of it ');
-                                        return [3 /*break*/, 4];
+                                        return [3 /*break*/, 5];
                                     case 1:
-                                        if (!((isNaN(Number(width))) ||
-                                            isNaN(Number(width)) ||
-                                            Number(width) <= 0 || Number(width) == null
-                                            || Number(height) <= 0 || Number(height) == null)) return [3 /*break*/, 2];
+                                        if (!(Number(width) <= 0 ||
+                                            Number(width) == null ||
+                                            Number(height) <= 0 ||
+                                            Number(height) == null)) return [3 /*break*/, 2];
                                         res.send('The Image Cannot Be Resized Because Width And Height Should Be Valid Number > 0 ');
-                                        return [3 /*break*/, 4];
-                                    case 2: return [4 /*yield*/, (0, ResImF_1.default)("OrSImage/".concat(req.params.imagename), Number(req.params.width), Number(req.params.height), "Thumbnail/".concat(req.params.width, "-").concat(req.params.height, "-").concat(req.params.imagename))];
-                                    case 3:
+                                        return [3 /*break*/, 5];
+                                    case 2:
+                                        if (!(isNaN(height) || isNaN(width))) return [3 /*break*/, 3];
+                                        res.send('Invalid Input Because Width And Height Should Be Valid Number > 0 ');
+                                        return [3 /*break*/, 5];
+                                    case 3: return [4 /*yield*/, (0, ResImF_1.default)("OrSImage/".concat(req.params.imagename), Number(req.params.width), Number(req.params.height), "Thumbnail/".concat(req.params.width, "-").concat(req.params.height, "-").concat(req.params.imagename))];
+                                    case 4:
                                         _a.sent();
                                         {
                                             // Display the image at the browser
@@ -79,11 +83,11 @@ req, res) {
                                                 return;
                                             });
                                         }
-                                        _a.label = 4;
-                                    case 4: return [2 /*return*/];
+                                        _a.label = 5;
+                                    case 5: return [2 /*return*/];
                                 }
                             });
-                        }); }))];
+                        }); })];
                 case 1:
                     //Check the availability
                     _a.sent();

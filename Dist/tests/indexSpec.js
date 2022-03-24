@@ -39,7 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// Importing supertest 
+// Importing supertest
 var supertest_1 = __importDefault(require("supertest"));
 // Importing app from index.ts file
 var index_1 = __importDefault(require("../index"));
@@ -51,7 +51,9 @@ describe('Testing the URL of REST API as an endpoint responses', function () {
         var res;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, req.get('/')];
+                case 0: return [4 /*yield*/, req.get('/')
+                    //Expect results for the test
+                ];
                 case 1:
                     res = _a.sent();
                     //Expect results for the test
@@ -66,7 +68,9 @@ describe('Testing the URL of the resized image', function () {
         var res;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, req.get('/thumbnail/imagename/palmtunnel.jpg/width/111/height/400')];
+                case 0: return [4 /*yield*/, req.get('/thumbnail/imagename/palmtunnel.jpg/width/111/height/400')
+                    //Expect results for the test
+                ];
                 case 1:
                     res = _a.sent();
                     //Expect results for the test

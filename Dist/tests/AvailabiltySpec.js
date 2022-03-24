@@ -40,7 +40,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var Availabilty_1 = __importDefault(require("../Availabilty"));
-var fs = require("fs");
+var fs = require('fs');
 var routes1_1 = __importDefault(require("../routes/routes1"));
 //Test 1 for the resizing function when image exists on original folder but not be resized
 //with that acceptable width and height
@@ -52,7 +52,7 @@ describe('Test #1::Testing Of The availability of existance of Image and values 
             width = 111;
             height = 400;
             imagename = 'palmtunnel.jpg';
-            // Check if resized image is existed before 
+            // Check if resized image is existed before
             routes1_1.default.get("/Thumbnail/imagename/:imagename/width/:width/height/:height", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
                 return __generator(this, function (_a) {
                     switch (_a.label) {
@@ -67,7 +67,8 @@ describe('Test #1::Testing Of The availability of existance of Image and values 
                                             _a.sent();
                                             expect(fs.access("Thumbnail/".concat(width, "-").concat(height, "-").concat(imagename), function (Notexist) {
                                                 if (Notexist) {
-                                                    'Image Resized Successfully';
+                                                    ;
+                                                    ('Image Resized Successfully');
                                                 }
                                             }));
                                             return [2 /*return*/];
@@ -84,7 +85,7 @@ describe('Test #1::Testing Of The availability of existance of Image and values 
         });
     }); });
 });
-//Test 2 for the resizing function when image doesnot exist on original folder 
+//Test 2 for the resizing function when image doesnot exist on original folder
 //with that acceptable width and height
 // Describe the test
 describe('Test #2::Testing Of The availability of existance of Image and values of height and width then Resizing an Image', function () {
@@ -108,7 +109,8 @@ describe('Test #2::Testing Of The availability of existance of Image and values 
                                             _a.sent();
                                             expect(fs.access("Thumbnail/".concat(width, "-").concat(height, "-").concat(imagename), function (exist) {
                                                 if (exist) {
-                                                    'Image Resized Successfully';
+                                                    ;
+                                                    ('Image Resized Successfully');
                                                 }
                                                 else {
                                                     expect('Image doesnot exist');
@@ -128,7 +130,7 @@ describe('Test #2::Testing Of The availability of existance of Image and values 
         });
     }); });
 });
-//Test 3 for the resizing function when image exist on original folder 
+//Test 3 for the resizing function when image exist on original folder
 //but one or both of  width and height arenot acceptable
 // Describe the test
 describe('Test #3::Testing Of The availability of existance of Image and values of height and width then Resizing an Image', function () {
@@ -152,7 +154,8 @@ describe('Test #3::Testing Of The availability of existance of Image and values 
                                             _a.sent();
                                             expect(fs.access("Thumbnail/".concat(width, "-").concat(height, "-").concat(imagename), function (exist) {
                                                 if (exist) {
-                                                    'Image Resized Successfully';
+                                                    ;
+                                                    ('Image Resized Successfully');
                                                 }
                                                 else {
                                                     expect('Both Width & Height should be valid number>0');
