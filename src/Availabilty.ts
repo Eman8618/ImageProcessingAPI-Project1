@@ -11,7 +11,7 @@ async function Availabity(
    height: number, //New height for the Resized Image
    req: Request,
    res: Response
-) {
+): Promise<void> {
    try {
       //Check the availability
       await fs.access(`${OrImPth}`, async (Imnotexist: boolean) => {
@@ -48,7 +48,7 @@ async function Availabity(
                      `Thumbnail/${req.params.width}-${req.params.height}-${req.params.imagename}`,
                      function (_err: boolean, Im: string) {
                         if (Im) res.end(Im)
-                        return
+                        return 'Resized Image is shown'
                      }
                   )
                }
@@ -56,7 +56,9 @@ async function Availabity(
          }
       })
    } catch (err) {
-      return 'Image cannot be resized you need to check Image existance on the original folder & the values of width and height '
+      throw new Error(
+         'Image cannot be resized you need to check Image existance on the original folder & the values of width and height '
+      )
    }
 }
 export default Availabity

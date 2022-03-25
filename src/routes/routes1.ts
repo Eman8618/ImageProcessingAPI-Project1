@@ -2,13 +2,12 @@ import express, { Router } from 'express'
 import { Request } from 'express'
 import { Response } from 'express'
 import Availabity from '../Availabilty'
-import ImResF from '../ResImF'
 const fs = require('fs')
 const routes1: Router = express.Router()
 
 routes1.get(
    `/Thumbnail/imagename/:imagename/width/:width/height/:height`,
-   async (req: Request, res: Response) => {
+   async (req: Request, res: Response): Promise<void> => {
       await fs.access(
          `Thumbnail/${req.params.width}-${req.params.height}-${req.params.imagename}`,
          async (err: boolean) => {

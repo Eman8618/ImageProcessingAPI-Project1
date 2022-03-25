@@ -7,7 +7,7 @@ async function ImResF(
    width: number, //New width for the Resized Image
    height: number, //New height for the Resized Image
    ReImPth: string // Resized Image and it's Path
-) {
+): Promise<void> {
    try {
       //Using sharp to resize the image
       await sharp(OrImPth)
@@ -17,9 +17,11 @@ async function ImResF(
          })
          .toFormat('jpeg', { mozjpeg: true })
          .toFile(ReImPth)
-      return ReImPth
+      return
    } catch (err) {
-      return 'Image cannot be resized you need to check Image existance on the original folder & the values of width and height '
+      throw new Error(
+         'Image cannot be resized you need to check Image existance on the original folder & the values of width and height '
+      )
    }
 }
 export default ImResF

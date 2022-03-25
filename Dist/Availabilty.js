@@ -80,7 +80,7 @@ req, res) {
                                             fs.readFile("Thumbnail/".concat(req.params.width, "-").concat(req.params.height, "-").concat(req.params.imagename), function (_err, Im) {
                                                 if (Im)
                                                     res.end(Im);
-                                                return;
+                                                return 'Resized Image is shown';
                                             });
                                         }
                                         _a.label = 5;
@@ -94,7 +94,7 @@ req, res) {
                     return [3 /*break*/, 3];
                 case 2:
                     err_1 = _a.sent();
-                    return [2 /*return*/, 'Image cannot be resized you need to check Image existance on the original folder & the values of width and height '];
+                    throw new Error('Image cannot be resized you need to check Image existance on the original folder & the values of width and height ');
                 case 3: return [2 /*return*/];
             }
         });
